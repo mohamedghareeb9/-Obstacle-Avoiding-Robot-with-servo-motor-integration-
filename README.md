@@ -37,7 +37,7 @@ Clone the Repository
 bash
 Copy
 Edit
-git clone https://github.com/mohamedghareeb9/Obstacle-Avoiding--Robot-with-servo-motor-integration-
+git clone https://github.com/mohamedghareeb9/Obstacle-Avoiding--Robot-with-servo-motor-integration
 .git
 Open in Arduino IDE
 
@@ -66,7 +66,7 @@ obstacle-avoiding-servo-robot/
 ├── README.md
 └── /media (optional for images/video)
 📜 License
-This project is licensed under the  License.
+This project is licensed under the Apache License.
 Feel free to use, modify, and distribute with attribution.
 
 🙋‍♂️ Author & Contributions
