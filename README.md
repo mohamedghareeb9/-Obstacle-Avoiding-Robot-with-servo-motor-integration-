@@ -1,74 +1,86 @@
-🤖 Obstacle-Avoiding Robot with Servo-Enhanced Ultrasonic Scanning
-An autonomous, Arduino-based robot designed to intelligently navigate its environment by detecting and avoiding obstacles using a servo-mounted ultrasonic sensor. The integration of a servo motor enables dynamic scanning, allowing the robot to assess a wider area before making navigation decisions.
+Smart Arduino Robot Car – Dual-Mode Navigation
+This project presents a DIY four-wheeled robot car built using an Arduino UNO. It supports two operational modes: a Bluetooth-controlled mode and an Autonomous obstacle avoidance mode, making it a versatile platform for robotics and embedded systems experimentation.
 
-🔧 Project Overview
-This project demonstrates how embedded systems and robotics can be combined to create a self-navigating vehicle. Written in C++ using the Arduino IDE, the robot uses distance feedback from an ultrasonic sensor that rotates via a servo motor to determine the optimal path in real-time.
+Overview
+The robot is designed to operate in two selectable modes:
 
-🎯 Key Features
-Wide-Angle Obstacle Detection
-A servo-mounted ultrasonic sensor scans multiple directions (left, center, right) for a broader field of vision.
+Bluetooth Mode: The robot is wirelessly controlled via the HC-05 Bluetooth module using a PC or smartphone. Commands are transmitted to the Arduino to manually steer the robot in real-time.
 
-Autonomous Path Adjustment
-Real-time decision-making logic enables the robot to avoid obstacles by turning toward the clearest path.
+Autonomous Mode: The onboard ultrasonic sensor, mounted on a servo motor, continuously scans the environment. The robot analyzes distance data and autonomously avoids obstacles by adjusting its path accordingly.
 
-Dual DC Motor Drive
-Enables smooth, differential steering for forward, reverse, and turning motions.
+This project demonstrates the integration of sensors, actuators, and control logic within a microcontroller-based system.
 
-Portable Power System
-Compact battery pack allows for wireless, untethered operation.
+Key Features
+Dual-mode operation (Bluetooth and Autonomous)
 
-Modular & Expandable Design
-Easily adaptable for more sensors, Bluetooth control, or additional automation logic.
+Servo-driven ultrasonic scanning for extended field of detection
 
-🧰 Hardware Components
-Component	Quantity
-Arduino UNO (or clone)	1
-Ultrasonic Sensor (HC-SR04)	1
-Servo Motor (e.g., SG90)	1
-Motor Driver Module (L298N or L293D)	1
-DC Motors with wheels	2
-Robot Chassis	1
-Battery Pack (6–9V)	1
-Jumper Wires	As needed
+Real-time obstacle detection and decision making
 
-💻 Installation & Usage
-Clone the Repository
+Manual wireless control via Bluetooth terminal
+
+Independent motor control using dual motor drivers
+
+Breadboard-based prototype for rapid testing and modifications
+
+Hardware Components
+Component	Description
+Arduino UNO	Microcontroller board
+HC-SR04 Ultrasonic Sensor	Distance measurement
+SG90 Servo Motor	Rotates sensor for scanning
+L298N Motor Driver Modules	Dual H-bridge motor controllers
+HC-05 Bluetooth Module	Wireless communication module
+4× DC Motors + Wheels	Robot locomotion
+Custom Chassis + Breadboard	Structural base and wiring platform
+Battery Pack (6–9V)	Power supply
+H-Bridge
+
+System Architecture
+Sensor Layer: The ultrasonic sensor mounted on a servo motor provides distance data in multiple directions.
+
+Control Layer: The Arduino processes inputs from the sensors or Bluetooth commands and selects the appropriate behavior.
+
+Actuator Layer: Dual L298N modules drive the motors to enable directional control and speed regulation.
+
+Implementation Details
+Written in C++ using the Arduino IDE
+
+Modular code structure to support both modes
+
+Uses Serial communication for Bluetooth input
+
+Includes debouncing and timing logic to stabilize sensor readings
+
+Mode selection implemented using a physical switch with conditional logic
+
+Challenges Encountered
+Problem	Resolution
+Inconsistent motor behavior	Introduced a separate power source and soldered key connections
+HC-05 not pairing with PC	Verified TX/RX wiring and matched the baud rate (9600 bps)
+Servo and ultrasonic interference	Added timing delays and smoothing logic to improve stability
+
+Getting Started
+Clone the repository
 
 bash
 Copy
 Edit
-git clone https://github.com/mohamedghareeb9/Obstacle-Avoiding--Robot-with-servo-motor-integration
-.git
-Open in Arduino IDE
+git clone https://github.com/mohamedghareeb9/bluetooth-autonomous-robot-car.git
+Open the .ino file in the Arduino IDE.
 
-Launch obstacle_avoiding_robot.ino
+Connect your Arduino UNO, select the correct board and COM port.
 
-Select your board and port from the Tools menu
+Upload the code to your device.
 
-Upload the Code
+Power the robot using a battery pack.
 
-Click the Upload button to flash the code onto your Arduino
+Use the hardware switch to toggle between Bluetooth and Autonomous modes.
 
-Power the Robot
+License
+This project is licensed under the Apache License 2.0.
+You are free to use, modify, and distribute the code, provided that you retain the original license and attribution.
 
-Use a battery pack or USB power supply
+Author
+Mohamed Ghareeb
+GitHub: @mohamedghareeb9
 
-Watch It Navigate
-
-Place the robot in an obstacle-rich environment and observe its behavior
-
-📁 Folder Structure
-bash
-Copy
-Edit
-obstacle-avoiding-servo-robot/
-├── obstacle_avoiding_robot.ino
-├── README.md
-└── /media (optional for images/video)
-📜 License
-This project is licensed under the Apache License.
-Feel free to use, modify, and distribute with attribution.
-
-🙋‍♂️ Author & Contributions
-Developed by Mohamed Gharib, combining foundational robotics with intelligent scanning mechanics.
-Contributions, forks, and suggestions are welcome!
